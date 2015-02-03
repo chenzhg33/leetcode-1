@@ -166,3 +166,32 @@ int main(int argc, char** argv)
     vector<vector<int> > r = subsets(v);
     printResult(r);
 }
+/***************************************************************
+class Solution {
+public:
+    vector<vector<int> > subsets(vector<int> &S) {
+			result.clear();
+			sort(S.begin(), S.end());
+			result.push_back(vector<int>());
+			int len = S.size();
+			for (int i = 1; i <= len; ++i) {
+				combination(S, len, 0, a, i, 0);
+			}
+			return result;
+    }
+		void combination(vector<int> &vec, int len, int start, int a[], int sublen, int cur) {
+			if (sublen == cur) {
+				vector<int> tmp(a, a + sublen);
+				result.push_back(tmp);
+				return;
+			}
+			for (int i = start; i < len - sublen + 1 + cur; ++i) {
+				a[cur] = vec[i];
+				combination(vec, len, i + 1, a, sublen, cur + 1);
+			}
+		}
+private:
+			vector< vector<int> > result;
+			int a[100];
+};
+********************************************************************/
